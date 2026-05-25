@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes comparsa {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(-50px);
+    }
+
+    }
+    
+@keyframes allungare {
+    0% {
+        width: 100px;
+    }
+    100% {
+        width: 400px;
+    }
+}
+        .start{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: orange;
+            color: black;
+            font-family: Roboto;
+        }
+        .proverb{
+            color: black;
+            font-family: Outfit;
+            font-size: 300%;
+            animation: comparsa 3s ease-out;
+        }
+        .chi_sono{
+            color: black;
+            font-family: Roboto;
+            font-size: 200%;
+        }
+        .rectangle{
+            background-color: purple;
+            height: 30px;
+            border-radius: 80px;
+            width: 400px;
+            animation: allungare 3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="start">
+        <a>Chi sono</a>
+        <a>Il problema e la bellezza dell'Italia</a>
+        <a>Traduttore</a>
+        <a>Esercizi di traduzione</a>
+    </div>
+
+    <div class="proverb">
+        <h1>La Sicilia è l'Italia al superlativo, nel bene e nel male.</h1>
+    </div>
+    <div class="chi_sono">
+        <div class="rectangle"></div>
+        <h1>Chi sono</h1>
+    </div>
+
+    
+</body>
+</html>
