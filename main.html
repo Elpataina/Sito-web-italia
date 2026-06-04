@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../static/css/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-@keyframes comparsa {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 100%;
-        transform: translateY(-50px);
-    }
-
-    }
-    
-@keyframes allungare {
-    0% {
-        width: 100px;
-    }
-    100% {
-        width: 400px;
-    }
-}
-        .start{
-            display: flex;
-            justify-content: space-evenly;
-            background-color: orange;
-            color: black;
-            font-family: Roboto;
-        }
-        .proverb{
-            color: black;
-            font-family: Outfit;
-            font-size: 300%;
-            animation: comparsa 3s ease-out;
-        }
-        .chi_sono{
-            color: black;
-            font-family: Roboto;
-            font-size: 200%;
-        }
-        .rectangle{
-            background-color: purple;
-            height: 30px;
-            border-radius: 80px;
-            width: 400px;
-            animation: allungare 3s ease-out;
-        }
-    </style>
 </head>
 <body>
+        {% block content %}
     <div class="start">
-        <a>Chi sono</a>
-        <a>Il problema e la bellezza dell'Italia</a>
-        <a>Traduttore</a>
-        <a>Esercizi di traduzione</a>
+        <a href="#chi_sono">Chi sono</a>
+        <a href="#problema">Il problema e la bellezza dell'Italia</a>
+        <a href="#traduzione">Traduttore</a>
+        <a href="../templates/siciliano.html">Traduttore Siciliano</a>
+    </div>
+
+    <div class="punti">
+        <p>Punti: {{punti}}</p>
     </div>
 
     <div class="proverb">
-        <h1>La Sicilia è l'Italia al superlativo, nel bene e nel male.</h1>
+        <h1>{{proverb}}</h1>
     </div>
-    <div class="chi_sono">
+    
+    <div class="chisono" id="chi_sono">
         <div class="rectangle"></div>
         <h1>Chi sono</h1>
+        <p>Ciao a tutti voi italiani (Ho controllato tutto con il captcha mega italiano 
+            quindi non ci siano possibilità che non siate italiani), mi chiamo Mirko 
+            e nel caso non l'aveste capito, sono italiano. Sono fierissimo del mio 
+            Paese, anche con i suoi problemi, perchè è la mia Patria, nonchè la mia 
+            casa. Vivo a L'Aquila, in Abruzzo, ma non per questo amo le montagne, infatti 
+            le odio!!! Preferisco di gran lunga il mare e l'estate perchè è tutto molto 
+            più caldo e sereno. Sono un alunno di terza media, quindi quest'estate avrò 
+            gli esami!! Devo ammettere, però, che non mi preoccupano per niente: sarà 
+            facilissimo e subito dopo andrò a mangiare un buonissimo gelato!
+        </p>
     </div>
 
+<!--Un grande problema-->
+        <div class="problem" id="problema">
+        <div class="rectangle2"></div>
+        <h1>Una grande questione</h1>
+        <p>Sappiamo tutti che in Italia non è esistita una lingua unica
+            per tantissimi anni: la questione della lingua è sempre tornata,
+            perchè ogni regione aveva una propria lingua, un proprio dialetto.
+            Con Alessandro Manzoni viene scritto il primo romanzo in lingua
+            italiana, senza francesismi, inglesismi o altre forme dialettali.
+            L'italiano scelto da Manzoni è il dialetto fiorentino, già usato
+            da Dante Alighieri nella Divina Commedia, perchè veniva ritenuta
+            la lingua colta per eccellenza. La bellezza dell'Italia è che ancora
+            oggi esistono i dialetti, non si sono estinti, e anche se per molti
+            potrebbe essere difficile comprendere altre persone di regioni
+            diverse, restano comunque un simbolo della lunga questione della
+            lingua italiana, e un patrimonio culturale per i grandi e per i più
+            piccoli, che saranno cittadini del futuro
+        </p>
+    </div>
     
+ <!--Set della lingua-->
+    <div class="dialetti" id="traduzione">
+        <a href="../templates/siciliano.html" class="siciliano languagebox">
+            <h1>Siciliano</h1>
+            <p>Consigliato per i più simpatici</p>
+            <img src="../static/imgs/Progetto_senza_titolo-removebg-preview.png">
+        </a>
+
+        <div class="lombardo languagebox">
+            <h1>Lombardo</h1>
+            <p>Consigliato per i più antipatici</p>
+            <img src="../static/imgs/seconda-removebg-preview.png">
+        </div>
+
+
+        <div class="ligure languagebox">
+            <h1>Ligure</h1>
+            <p>Consigliato per chi vuole andare al mare</p>
+            <img src="../static/imgs/terza-removebg-preview.png">
+        </div>
+
+
+
+
+    </div>
+        {% endblock %}
 </body>
 </html>

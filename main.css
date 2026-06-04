@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes comparsa {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(-50px);
+    }
+
+    }
+    
+@keyframes allungare {
+    0% {
+        width: 100px;
+    }
+    100% {
+        width: 400px;
+    }
+}
+        p{
+            font-family: Roboto;
+            font-size: 140%;
+        }
+        .start{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: orange;
+            color: black;
+            font-family: Roboto;
+            text-decoration: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .punti{
+            text-align: right;
+            position: sticky;
+            background-color: orange;
+            width: 100px;
+            display:inline-block;
+            top: 0;
+            border-radius: 0px 0px 40px 40px;
+            text-align: center;
+
+        }
+        a:hover{
+            font-size: 150%;
+            color: white; 
+        }
+        .proverb{
+            color: black;
+            font-family: Outfit;
+            font-size: 300%;
+            animation: comparsa 3s ease-out;
+        }
+        .chisono{
+            color: black;
+            font-family: Roboto;
+            font-size: 200%;
+
+            background-color: rgb(255, 206, 244)
+        }
+        .problem{
+            color: black;
+            font-family: Roboto;
+            font-size: 200%;
+            background-color: rgb(255, 244, 206)
+
+
+        }
+        .rectangle{
+            background-color: purple;
+            height: 30px;
+            border-radius: 80px;
+            width: 400px;
+            animation: allungare 3s ease-out;
+        }
+        .rectangle2{
+             background-color: rgb(128, 94, 0);
+            height: 30px;
+            border-radius: 80px;
+            width: 400px;
+            animation: allungare 3s ease-out;           
+        }
+        .dialetti{
+            display: flex;
+            justify-content: space-evenly;
+            font-family: Roboto;
+            color: black;
+        }
+        .ligure{
+            background-color: rgb(255,206,244);
+            border-radius: 70px;
+        }
+        .lombardo{
+            background-color: rgb(255, 244, 206);
+            border-radius: 70px;
+        }
+        .siciliano{
+            background-color: rgb(255, 206, 244);
+            border-radius: 70px;
+        }
+        .languagebox{
+            text-align: center;
+            height: 200px;
+            width: 500px;
+        }
+        .languagebox:hover{
+            width: 102%;
+            font-size: 102%;
+        }
+        img{
+            width: 20%;
+            position: relative;
+            bottom: 60px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .big{
+            font-size: 200%;
+            color: black;
+            font-family: Roboto;
+        }
+        .traduzione{
+            background-color: rgb(0, 42, 150);
+            color: white;
+            font-family: Roboto;
+            border-radius: 70px;
+            width: 200px;
+            height: 50px;
+            font-size: 50%;
+            text-align: center;
+        }

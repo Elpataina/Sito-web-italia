@@ -1,0 +1,38 @@
+p<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traduttore Siciliano</title>
+</head>
+<body>
+    {% block content %}
+    <div class="start">
+        <a href="../templates/main.html">Home</a>
+        <a href="traduzione"> Traduzione libera </a>
+        <a href="esercizi"> Esercizi di traduzione</a>
+    </div>
+
+    <div class="chisono">
+        <h1>Traduzione libera: parla in italiano e verrà scritto il testo in siciliano!</h1>
+        <p class="traduzione"> Clicca qui per parlare e tradurre </p>
+        <p>Testo tradotto: {testo}</p>
+
+    </div>
+
+    <div class="problem">
+        <h1>Adesso si fa sul serio!</h1>
+        <p class="traduzione"> Clicca qui per parlare e tradurre </p>
+        <p>Parola da tradurre da italiano a siciliano: {parola}</p>
+        <p>{correct}</p>
+    </div>
+
+
+    {% endblock %}
+
+
+
+
+    
+</body>
