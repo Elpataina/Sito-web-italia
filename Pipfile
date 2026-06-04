@@ -10,6 +10,8 @@ numpy = "*"
 speechrecognition = "*"
 googletrans = "==4.0.0-rc1"
 deep-translator = "*"
+jinja2 = "*"
+flask = "*"
 
 [dev-packages]
 
