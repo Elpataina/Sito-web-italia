@@ -18,7 +18,7 @@ def proverbi_function():
     proverbio = random.choice(proverbi)
     return render_template("main.html", proverb=proverbio)
 
-@app.route("/main")
+@app.route("/")
 def punti():
     punti = 10
     return render_template("main.html", punti=punti)
@@ -39,16 +39,30 @@ def traduttore():
         return render_template("siciliano.html", testo=testo_siciliano)
 
 
-@app.route("/siciliano", methods=["GET", "POST"])
+@app.route("/traduttoreparole", methods=["GET", "POST"])
 def traduttoreparole():
-
     if request.method =="GET":
-        return render_template("siciliano.html", parola="", correct="")
-    if request.method == "POST":
+
         parola_italiana = request.form.get("parola")
+        
         parola_siciliana = traduci_parole_con_gemini(parola_italiana, "italiano", "siciliano", parola_italiana)
-        return render_template("siciliano.html", parola=parola_italiana, correct="")
+
+        return render_template("siciliano.html", parola="", correct="", italiana=parola_italiana)
+ 
+    if request.method == "POST":
+
+        parola_italiana = request.form.get("parola")
+        
+        parola_siciliana = traduci_parole_con_gemini(parola_italiana, "italiano", "siciliano", parola_italiana)
+
+        if parola_siciliana.lower() == parola_italiana.lower():
+            return render_template("siciliano.html", parola=parola_italiana, correct="Corretto!", parola_siciliana=parola_siciliana)
+            punti += 5
+        if parola_siciliana.lower() != parola_italiana.lower():
+            punti -= 2
+            if punti <= 0:
+                punti = 0
+        return render_template("siciliano.html", parola=parola_italiana, correct="Sbagliato!", parola_siciliana=parola_siciliana, punti=punti)
 
 if __name__ == "__main__":
-
     app.run(debug=True)
