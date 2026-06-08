@@ -36,16 +36,31 @@ sicilian = {
     "suli": "sole",
 }
 
+punti = 0
+
+@app.route("/home")
+def home():
+    proverbio = random.choice(proverbi)
+    return render_template("main.html", punti=session.get("punti", 0), proverb=proverbio)
 
 @app.route("/")
 def proverbi_function():
     proverbio = random.choice(proverbi)
-    return render_template("main.html", proverb=proverbio)
+    punti = 0
+    return render_template("main.html", proverb=proverbio, punti=punti)
 
-@app.route("/main")
+@app.route("/home")
 def punti():
     punti = 10
-    return render_template("main.html", punti=punti)
+    if punti <=10:
+        classe = "Fai schifo"
+    if punti >10 and punti <=20:
+        classe = "Abbastanza bene"
+    if punti >20 and punti <=30:
+        classe="Bravo"
+    if punti >30:
+        classe= "Good Boy"
+    return render_template("main.html", punti=punti, classe=classe)
 
 
 @app.route("/siciliano", methods=["GET", "POST"])
